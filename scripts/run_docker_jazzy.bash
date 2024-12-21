@@ -15,7 +15,7 @@ docker run -it \
     --net=host \
     --privileged \
     -v ~/ros2_ws/:/ros2_ws/ \
-    ros:jazzy-updated  \
+    osrf/ros:jazzy-desktop-full  \
     bash
 
 echo "Done."

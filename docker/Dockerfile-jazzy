@@ -3,16 +3,20 @@ FROM osrf/ros:jazzy-desktop-full
 
 # Install additional dependencies if needed
 RUN apt-get update && apt-get install -y \
-    python3-pip \
+    nano \
+    terminator \
     && rm -rf /var/lib/apt/lists/*
 
 # Set the locale
 RUN locale-gen en_US en_US.UTF-8 && \
     update-locale LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8
+# Create a ROS 2 workspace
+WORKDIR /ros2_ws
+RUN mkdir -p src
 
 # Source the ROS 2 setup script
 SHELL ["/bin/bash", "-c"]
-RUN echo "source /opt/ros/humble/setup.bash" >> ~/.bashrc
+RUN echo "source /opt/ros/jazzy/setup.bash" >> ~/.bashrc
 
 # Set the entrypoint
 ENTRYPOINT ["/ros_entrypoint.sh"]

@@ -5,7 +5,8 @@ FROM osrf/ros:humble-desktop-full
 RUN apt-get update && apt-get install -y \
     python3-pip \
     && rm -rf /var/lib/apt/lists/*
-
+    # Change the working directory to ros2_ws
+WORKDIR /ros2_ws
 # Set the locale
 RUN locale-gen en_US en_US.UTF-8 && \
     update-locale LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8
