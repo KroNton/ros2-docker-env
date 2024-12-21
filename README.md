@@ -5,13 +5,11 @@ ros2-docker-scripts/
 ├── README.md
 ├── LICENSE
 ├── scripts/
-│   ├── run-galactic.sh
 │   ├── run-humble.sh
-│   ├── run-rolling.sh
-│   └── common.sh
+│   ├── run-jazzy.sh
+│   └── ....
 ├── docker/
-│   ├── Dockerfile-galactic
 │   ├── Dockerfile-humble
-│   └── Dockerfile-rolling
+│   └── Dockerfile-jazzy
 └── .gitignore
 ```
