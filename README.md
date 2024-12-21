@@ -6,6 +6,7 @@ This repository provides script files for running ROS 2 environments in Docker c
 - Simple shell scripts to build and run containers.
 - Easy to extend for additional distributions or configurations.
 
+## Directory Structure
 ```
 ros2-docker-env/
 ├── README.md
