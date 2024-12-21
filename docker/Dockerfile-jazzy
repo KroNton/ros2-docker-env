@@ -1,0 +1,19 @@
+# Use the official ROS 2 jazzy base image
+FROM osrf/ros:jazzy-desktop-full
+
+# Install additional dependencies if needed
+RUN apt-get update && apt-get install -y \
+    python3-pip \
+    && rm -rf /var/lib/apt/lists/*
+
+# Set the locale
+RUN locale-gen en_US en_US.UTF-8 && \
+    update-locale LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8
+
+# Source the ROS 2 setup script
+SHELL ["/bin/bash", "-c"]
+RUN echo "source /opt/ros/humble/setup.bash" >> ~/.bashrc
+
+# Set the entrypoint
+ENTRYPOINT ["/ros_entrypoint.sh"]
+CMD ["bash"]
