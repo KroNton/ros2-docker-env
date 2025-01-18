@@ -15,7 +15,7 @@ docker run -it \
     --net=host \
     --privileged \
     -v ~/ros2_ws/:/ros2_ws/ \
-    osrf/ros:jazzy-desktop-full  \
+    ghcr.io/kronton/ros2-docker-env:jazzy-full-0.0.2  \
     bash
 
 echo "Done."
