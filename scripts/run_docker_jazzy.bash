@@ -11,6 +11,8 @@ docker run -it \
     --env="QT_X11_NO_MITSHM=1" \
     --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw" \
     --env="XAUTHORITY=$XAUTH" \
+    --env="ROS_AUTOMATIC_DISCOVERY_RANGE" \
+    --env="ROS_STATIC_PEERS" \
     --volume="$XAUTH:$XAUTH" \
     --net=host \
     --privileged \
